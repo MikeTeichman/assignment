@@ -1,8 +1,6 @@
 package com.assignment.offer.service.impl;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -11,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.assignment.offer.model.Contract;
-import com.assignment.offer.model.Offer;
 import com.assignment.offer.service.ContractService;
 
 /**

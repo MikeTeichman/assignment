@@ -12,17 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class OfferApplication {
 
-    /**
-     * Main method to launch the Spring Boot application.
-     *
-     * @param args the command line arguments
-     */
+	/**
+	 * Main method to launch the Spring Boot application.
+	 *
+	 * @param args the command line arguments
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(OfferApplication.class, args);
 	}
 
-//	@GetMapping (value = "/hello")
-//	public String sayHello() {
-//		return "Hello There!!!";
-//	}
 }
