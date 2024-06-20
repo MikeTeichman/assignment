@@ -49,4 +49,13 @@ public class OfferController {
 		return offers;
 	}
 
+	@GetMapping(value = "/public/hello")
+    public String publicHello() {
+        return "Hello, Public!";
+    }
+
+    @GetMapping(value = "/private/hello")
+    public String privateHello() {
+        return "Hello, Private!";
+    }
 }

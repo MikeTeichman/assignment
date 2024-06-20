@@ -20,6 +20,13 @@ import com.assignment.offer.service.ContractService;
 import com.assignment.offer.service.OfferService;
 import com.assignment.offer.service.OfferStatusService;
 
+/**
+ * Unit tests for {@link OfferStatusService}.
+ * <p>
+ * This test class verifies the behavior of the {@link OfferStatusService} when
+ * handling various service methods.
+ * </p>
+ */
 public class OfferStatusServiceTest {
 
 	@Mock
@@ -36,6 +43,10 @@ public class OfferStatusServiceTest {
 		MockitoAnnotations.openMocks(this);
 	}
 
+	/**
+	 * Test that offers with status 'IN PROGRESS' are correctly retrieved by
+	 * customer ID.
+	 */
 	@Test
 	public void testGetOffersWithStatusByCustomerId_inProgress() {
 		Offer offer = new Offer("offer1", "customer1", LocalDateTime.now().minusDays(5), null);
@@ -48,6 +59,10 @@ public class OfferStatusServiceTest {
 		assertEquals("IN PROGRESS", result.get(0).getStatus());
 	}
 
+	/**
+	 * Test that offers with status 'REJECTED' are correctly retrieved by
+	 * customer ID.
+	 */
 	@Test
 	public void testGetOffersWithStatusByCustomerId_rejected() {
 		Offer offer = new Offer("offer2", "customer1", LocalDateTime.now().minusDays(10),
@@ -61,6 +76,10 @@ public class OfferStatusServiceTest {
 		assertEquals("REJECTED", result.get(0).getStatus());
 	}
 
+	/**
+	 * Test that offers with status 'CONVERTED' are correctly retrieved by
+	 * customer ID.
+	 */
 	@Test
 	public void testGetOffersWithStatusByCustomerId_converted() {
 		Offer offer = new Offer("offer3", "customer1", LocalDateTime.now().minusDays(15), null);
@@ -75,6 +94,10 @@ public class OfferStatusServiceTest {
 		assertEquals("CONVERTED", result.get(0).getStatus());
 	}
 
+	/**
+	 * Test that offers with status 'CREATED' are correctly retrieved by
+	 * customer ID.
+	 */
 	@Test
 	public void testGetOffersWithStatusByCustomerId_created() {
 		Offer offer = new Offer("offer4", "customer1", null, null);

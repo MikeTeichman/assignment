@@ -11,10 +11,20 @@ import org.junit.jupiter.api.Test;
 
 import com.assignment.offer.model.Offer;
 
+/**
+ * Unit tests for {@link MockOfferService}.
+ * <p>
+ * This test class verifies the behavior of the {@link MockOfferService} when
+ * handling various service methods.
+ * </p>
+ */
 public class MockOfferServiceTest {
 
 	private final MockOfferService mockOfferService = new MockOfferService();
 
+	/**
+     * Test that a mock offer is returned when the service is called.
+     */
 	@Test
 	public void testGetOffersByCustomerId() {
 		List<Offer> offersCust1 = mockOfferService.getOffersByCustomerId("customer1");
@@ -30,7 +40,8 @@ public class MockOfferServiceTest {
 		Offer offer2 = offersCust1.get(1);
 		assertEquals("offer2", offer2.getId());
 		assertEquals("customer1", offer2.getCustomerId());
-		assertEquals(LocalDateTime.now().minusDays(5).format(DateTimeFormatter.ofPattern("dd-MM-yyyy")), offer2.getCreationDate().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+		assertEquals(LocalDateTime.now().minusDays(5).format(DateTimeFormatter.ofPattern("dd-MM-yyyy")),
+				offer2.getCreationDate().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
 		assertNull(offer2.getRejectionDate());
 	}
 }
