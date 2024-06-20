@@ -31,6 +31,12 @@ public class ContractServiceImplTest {
 	@InjectMocks
 	private ContractServiceImpl contractService;
 
+	/**
+	 * Sets up the test environment before each test.
+	 *
+	 * This method initializes the mocks and injects them into the
+	 * ContractServiceImpl instance.
+	 */
 	@BeforeEach
 	public void setUp() {
 		MockitoAnnotations.openMocks(this);

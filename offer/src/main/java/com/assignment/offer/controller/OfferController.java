@@ -49,13 +49,25 @@ public class OfferController {
 		return offers;
 	}
 
+	/**
+	 * Handles requests to the public hello endpoint.
+	 *
+	 * @return a welcome message for public access.
+	 */
 	@GetMapping(value = "/public/hello")
-    public String publicHello() {
-        return "Hello, Public!";
-    }
+	public String publicHello() {
+		return "Hello, Public!";
+	}
 
-    @GetMapping(value = "/private/hello")
-    public String privateHello() {
-        return "Hello, Private!";
-    }
+	/**
+	 * Handles requests to the private hello endpoint.
+	 *
+	 * This endpoint requires authentication and proper authorization.
+	 *
+	 * @return a welcome message for private access.
+	 */
+	@GetMapping(value = "/private/hello")
+	public String privateHello() {
+		return "Hello, Private!";
+	}
 }

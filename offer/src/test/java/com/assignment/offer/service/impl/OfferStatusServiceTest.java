@@ -38,6 +38,12 @@ public class OfferStatusServiceTest {
 	@InjectMocks
 	private OfferStatusService offerStatusService;
 
+	/**
+	 * Sets up the test environment before each test.
+	 *
+	 * This method initializes the mocks and injects them into the
+	 * OfferStatusService instance.
+	 */
 	@BeforeEach
 	public void setUp() {
 		MockitoAnnotations.openMocks(this);
@@ -60,8 +66,8 @@ public class OfferStatusServiceTest {
 	}
 
 	/**
-	 * Test that offers with status 'REJECTED' are correctly retrieved by
-	 * customer ID.
+	 * Test that offers with status 'REJECTED' are correctly retrieved by customer
+	 * ID.
 	 */
 	@Test
 	public void testGetOffersWithStatusByCustomerId_rejected() {
@@ -77,8 +83,8 @@ public class OfferStatusServiceTest {
 	}
 
 	/**
-	 * Test that offers with status 'CONVERTED' are correctly retrieved by
-	 * customer ID.
+	 * Test that offers with status 'CONVERTED' are correctly retrieved by customer
+	 * ID.
 	 */
 	@Test
 	public void testGetOffersWithStatusByCustomerId_converted() {
@@ -95,8 +101,8 @@ public class OfferStatusServiceTest {
 	}
 
 	/**
-	 * Test that offers with status 'CREATED' are correctly retrieved by
-	 * customer ID.
+	 * Test that offers with status 'CREATED' are correctly retrieved by customer
+	 * ID.
 	 */
 	@Test
 	public void testGetOffersWithStatusByCustomerId_created() {
