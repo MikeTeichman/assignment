@@ -3,6 +3,7 @@ package com.assignment.offer.service.impl;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class MockOfferServiceTest {
 		Offer offer2 = offersCust1.get(1);
 		assertEquals("offer2", offer2.getId());
 		assertEquals("customer1", offer2.getCustomerId());
-		assertEquals("14-06-2024", offer2.getCreationDate().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+		assertEquals(LocalDateTime.now().minusDays(5).format(DateTimeFormatter.ofPattern("dd-MM-yyyy")), offer2.getCreationDate().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
 		assertNull(offer2.getRejectionDate());
 	}
 }
