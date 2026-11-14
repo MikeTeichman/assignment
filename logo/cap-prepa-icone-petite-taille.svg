@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="512" height="512">
+  <circle cx="100" cy="100" r="80" fill="#F7F7F2" stroke="#1C2541" stroke-width="6"/>
+  <path d="M44 124 L148 124 M62 142 L62 66" stroke="#1C2541" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+  <path d="M124 124 A 62 62 0 0 0 62 62" stroke="#1C2541" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M62 124 L105.8 80.2" stroke="#3AAFA9" stroke-width="9" stroke-linecap="round"/>
+  <path d="M105.8 80.2 L105.8 124" stroke="#3AAFA9" stroke-width="3.5" stroke-dasharray="5 5" opacity="0.85"/>
+  <path d="M84 124 A 22 22 0 0 0 77.6 108.4" stroke="#3AAFA9" stroke-width="3.5" fill="none"/>
+  <circle cx="105.8" cy="80.2" r="6.5" fill="#3AAFA9"/>
+  <!-- médecine : cœur en haut de l'arc -->
+  <path transform="translate(62 58)" d="M0 9 C -4 5, -13 1, -13 -5 C -13 -10, -8 -13, -4 -13 C -2 -13, 0 -11, 0 -9 C 0 -11, 2 -13, 4 -13 C 8 -13, 13 -10, 13 -5 C 13 1, 4 5, 0 9 Z" fill="#E0A526" stroke="#F7F7F2" stroke-width="2.5" stroke-linejoin="round"/>
+  <path transform="translate(62 58)" d="M-8 -3 L-3 -3 L-1 -8 L2 2 L4 -3 L8 -3" stroke="#F7F7F2" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- polytechnique : roue dentée au bout de l'arc -->
+  <g transform="translate(124 124)">
+    <circle r="12" fill="none" stroke="#E0A526" stroke-width="7" stroke-dasharray="4.7 4.7"/>
+    <circle r="10" fill="#E0A526" stroke="#F7F7F2" stroke-width="0"/>
+    <circle r="4" fill="#F7F7F2"/>
+  </g>
+</svg>
