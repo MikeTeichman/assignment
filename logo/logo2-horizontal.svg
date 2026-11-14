@@ -7,7 +7,7 @@
   <path d="M118.6 75.4 L118.6 132" stroke="#3AAFA9" stroke-width="4" stroke-dasharray="6 6" opacity="0.8"/>
   <path d="M90 132 A 28 28 0 0 0 81.8 112.2" stroke="#3AAFA9" stroke-width="4" fill="none"/>
   <circle cx="118.6" cy="75.4" r="11" fill="#E0A526"/>
-  <text x="210" y="92" font-family="Georgia, 'Playfair Display', serif" font-size="54" font-weight="700" fill="#1C2541" letter-spacing="1">Cap Polytech</text>
+  <text x="210" y="92" font-family="Georgia, 'Playfair Display', serif" font-size="54" font-weight="700" fill="#1C2541" letter-spacing="1">Cap Prépa</text>
   <rect x="210" y="110" width="44" height="4" rx="2" fill="#3AAFA9"/>
   <text x="266" y="116" font-family="'Montserrat', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#3AAFA9" letter-spacing="2.5">EXAMEN D’ENTRÉE INGÉNIEUR CIVIL</text>
   <text x="210" y="146" font-family="'Montserrat', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="500" fill="#1C2541" opacity="0.75" letter-spacing="2.5">COURS · MÉTHODE · ENTRAÎNEMENT</text>
