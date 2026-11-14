@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cap Prépa – Examen d’entrée Polytechnique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Kit de marque Cap Prépa : bleu nuit = rigueur, turquoise = progression, blanc cassé = fond, ocre = un seul accent (boutons, rappels) */
+  --nuit:#1C2541; --nuit-2:#26315A; --turquoise:#3AAFA9; --turquoise-fonce:#2A8C87;
+  --papier:#F7F7F2; --papier-2:#ECEDE6; --ocre:#E0A526; --encre:#1C2541; --encre-douce:#4A5270;
+  --display:"Playfair Display", Georgia, "Times New Roman", serif;
+  --label:"Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --body:"Source Serif 4", Georgia, serif;
+  /* Mise en page : une colonne de lecture, ponctuée d’un calendrier horizontal qui va de janvier au jour J */
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--papier);color:var(--encre);font-family:var(--body);font-size:1.075rem;line-height:1.6}
+a{color:var(--turquoise-fonce)}
+:focus-visible{outline:3px solid var(--ocre);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(16px,4vw,40px)}
+.read{max-width:65ch}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+h3{font-size:1.3rem}
+.eyebrow{font-family:var(--label);font-weight:600;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--turquoise-fonce);display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.eyebrow::before{content:"";width:36px;height:3px;border-radius:2px;background:var(--turquoise)}
+section{padding:clamp(56px,8vw,96px) 0}
+.todo{background:#FCEFC9;border-bottom:2px dotted var(--ocre);padding:0 .25em;border-radius:3px;font-style:normal}
+
+/* bandeau */
+header.top{position:sticky;top:0;z-index:5;background:rgba(247,247,242,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--papier-2)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:10px;padding-bottom:10px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--nuit)}
+.brand svg{width:46px;height:46px;flex:none}
+.brand b{font-family:var(--display);font-size:1.35rem}
+.brand small{display:block;font-family:var(--label);font-size:.62rem;letter-spacing:.16em;color:var(--turquoise-fonce);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--label);font-weight:700;font-size:.92rem;letter-spacing:.02em;text-decoration:none;color:var(--nuit);background:var(--ocre);padding:14px 22px;border-radius:999px;border:0;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease;box-shadow:0 2px 0 rgba(28,37,65,.25)}
+.btn:hover{transform:translateY(-1px);box-shadow:0 5px 14px rgba(224,165,38,.35)}
+.btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.btn.small{padding:10px 16px;font-size:.82rem}
+
+/* hero */
+.hero{background:var(--nuit);color:var(--papier);padding:clamp(56px,9vw,104px) 0 0;position:relative;overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(24px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(2.3rem,5.4vw,4.1rem);color:var(--papier)}
+.hero h1 em{font-style:italic;color:var(--turquoise)}
+.hero p.lead{font-size:1.2rem;color:#D5D8E3;max-width:46ch;margin:22px 0 30px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero .eyebrow{color:var(--turquoise)}
+.hero-figure{justify-self:center;width:min(320px,80%)}
+.hero-figure svg{width:100%;height:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.35))}
+.facts{margin-top:clamp(40px,6vw,72px);display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(247,247,242,.14)}
+.facts div{padding:22px 18px;border-right:1px solid rgba(247,247,242,.14)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-family:var(--display);font-size:2.2rem;color:var(--papier);font-variant-numeric:tabular-nums;line-height:1}
+.facts span{font-family:var(--label);font-size:.78rem;letter-spacing:.06em;color:#C5CADA}
+
+/* problème */
+.obstacles{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:34px}
+.obstacles div{border-left:3px solid var(--turquoise);padding:4px 0 4px 18px}
+.obstacles strong{font-family:var(--label);font-size:.95rem;display:block;margin-bottom:4px}
+.obstacles p{margin:0;color:var(--encre-douce)}
+
+/* calendrier */
+.method{background:var(--papier-2)}
+.timeline{margin-top:40px;display:grid;grid-template-columns:repeat(7,1fr);position:relative}
+.timeline::before{content:"";position:absolute;left:0;right:0;top:27px;height:4px;background:linear-gradient(90deg,var(--turquoise) 0 72%,var(--ocre) 72% 100%);border-radius:2px}
+.step{position:relative;padding-top:52px;padding-right:12px}
+.step::before{content:"";position:absolute;top:18px;left:0;width:22px;height:22px;border-radius:50%;background:var(--papier-2);border:4px solid var(--turquoise)}
+.step.key::before{border-color:var(--ocre);background:var(--ocre)}
+.step .m{font-family:var(--label);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--turquoise-fonce)}
+.step.key .m{color:#9A6C0A}
+.step h3{font-size:1.05rem;margin:6px 0 4px}
+.step p{margin:0;font-size:.92rem;color:var(--encre-douce);line-height:1.45}
+.week{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.slot{background:var(--papier);border-radius:14px;padding:20px;border:1px solid #DCDDD3}
+.slot .d{font-family:var(--label);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--turquoise-fonce)}
+.slot .h{font-family:var(--display);font-size:1.6rem;font-variant-numeric:tabular-nums;margin:4px 0}
+.slot p{margin:0;font-size:.95rem;color:var(--encre-douce)}
+
+/* contenu */
+.includes{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 32px;margin-top:38px}
+.inc h3{font-size:1.12rem;margin-bottom:6px;display:flex;gap:10px;align-items:baseline}
+.inc h3 span{font-family:var(--label);font-size:.75rem;color:var(--turquoise-fonce);font-weight:700}
+.inc p{margin:0;color:var(--encre-douce);font-size:.98rem}
+
+/* anki */
+.anki{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);align-items:center}
+.cards{position:relative;height:300px}
+.card{position:absolute;width:min(360px,86%);border-radius:16px;padding:22px 24px;background:#fff;border:1px solid #DCDDD3;box-shadow:0 14px 30px rgba(28,37,65,.12)}
+.card .tag{font-family:var(--label);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--turquoise-fonce);font-weight:700}
+.card .q{font-family:var(--display);font-size:1.25rem;margin-top:10px}
+.card.front{top:0;left:0;transform:rotate(-2deg)}
+.card.back{top:120px;left:12%;transform:rotate(1.5deg);border-top:4px solid var(--turquoise)}
+.formula{font-family:"Source Serif 4",Georgia,serif;font-size:1.25rem;margin:12px 0 6px;font-style:italic}
+.card .next{font-family:var(--label);font-size:.75rem;color:var(--encre-douce)}
+.card .next b{color:var(--turquoise-fonce)}
+
+/* lucas */
+.story{background:var(--nuit);color:var(--papier)}
+.story .eyebrow{color:var(--turquoise)}
+.story h2{color:var(--papier)}
+.story .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:34px}
+.story .cols h3{font-family:var(--label);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--turquoise);margin-bottom:8px}
+.story .cols p{margin:0;color:#D5D8E3}
+.story .note{margin-top:28px;font-family:var(--label);font-size:.8rem;color:#AEB4C8}
+
+/* parents */
+.parents{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,64px)}
+.qa{display:grid;gap:22px}
+.qa div{padding-bottom:18px;border-bottom:1px solid #DCDDD3}
+.qa strong{font-family:var(--display);font-size:1.2rem;display:block;margin-bottom:4px}
+.qa p{margin:0;color:var(--encre-douce)}
+
+/* témoignages */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.quote{background:#fff;border-radius:14px;padding:22px;border:1px dashed var(--ocre)}
+.quote p{margin:0 0 12px;font-style:italic}
+.quote span{font-family:var(--label);font-size:.8rem;color:var(--encre-douce)}
+
+/* coach */
+.coach{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start}
+.portrait{width:150px;height:150px;border-radius:50%;background:var(--papier-2);border:3px dashed var(--turquoise);display:grid;place-items:center;font-family:var(--label);font-size:.75rem;color:var(--encre-douce);text-align:center;padding:12px}
+.stat{display:flex;gap:28px;flex-wrap:wrap;margin-top:18px}
+.stat div b{font-family:var(--display);font-size:2.4rem;display:block;line-height:1;color:var(--nuit)}
+.stat div span{font-family:var(--label);font-size:.78rem;color:var(--encre-douce)}
+
+/* offre */
+.offer{background:var(--papier-2)}
+.price-box{margin-top:34px;display:grid;grid-template-columns:1.1fr .9fr;background:#fff;border-radius:20px;overflow:hidden;border:1px solid #DCDDD3;box-shadow:0 20px 50px rgba(28,37,65,.10)}
+.price-box .left{padding:clamp(24px,4vw,40px)}
+.price-box ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
+.price-box li{padding-left:30px;position:relative}
+.price-box li::before{content:"";position:absolute;left:0;top:.45em;width:16px;height:9px;border-left:3px solid var(--turquoise);border-bottom:3px solid var(--turquoise);transform:rotate(-45deg)}
+.price-box .right{background:var(--nuit);color:var(--papier);padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;justify-content:center;gap:14px}
+.amount{font-family:var(--display);font-size:clamp(3rem,7vw,4.6rem);line-height:1;font-variant-numeric:tabular-nums}
+.amount small{font-family:var(--label);font-size:.9rem;color:#C5CADA;display:block;margin-top:8px;letter-spacing:.04em}
+.guarantee{margin-top:26px;border-left:4px solid var(--ocre);background:#fff;border-radius:0 14px 14px 0;padding:18px 22px}
+.guarantee strong{font-family:var(--label)}
+
+/* faq */
+details{border-bottom:1px solid #DCDDD3;padding:16px 0}
+summary{cursor:pointer;font-family:var(--display);font-size:1.18rem;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--label);color:var(--turquoise-fonce);font-weight:700}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0;color:var(--encre-douce)}
+
+/* médecine + contact */
+.med{display:flex;gap:24px;align-items:center;background:#fff;border:1px solid #DCDDD3;border-radius:18px;padding:24px}
+.med svg{width:84px;height:84px;flex:none}
+.contact{background:var(--nuit);color:var(--papier);text-align:left}
+.contact h2{color:var(--papier)}
+.contact .row{display:flex;flex-wrap:wrap;gap:16px 40px;margin:24px 0 30px;font-family:var(--label);font-size:.95rem}
+.contact .row span{color:#C5CADA;display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+footer{background:#141B30;color:#9AA1B8;font-family:var(--label);font-size:.78rem;padding:22px 0}
+
+@media (max-width:860px){
+  .hero .grid,.anki,.parents,.price-box{grid-template-columns:1fr}
+  .hero-figure{display:none}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .facts div:nth-child(2){border-right:0}
+  .facts div{border-bottom:1px solid rgba(247,247,242,.14)}
+  .timeline{grid-template-columns:1fr;gap:6px}
+  .timeline::before{left:9px;right:auto;top:0;bottom:0;width:4px;height:auto;background:linear-gradient(180deg,var(--turquoise) 0 72%,var(--ocre) 72% 100%)}
+  .step{padding:4px 0 14px 40px}
+  .step::before{top:6px}
+  .week,.includes,.quotes,.story .cols,.obstacles{grid-template-columns:1fr}
+  .coach{grid-template-columns:1fr}
+  .cards{height:330px}
+}
+@media (max-width:480px){header.top .btn{display:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Cap Prépa, retour en haut">
+      __ICON__
+      <span><b>Cap Prépa</b><small>EXAMENS D’ENTRÉE</small></span>
+    </a>
+    <a class="btn small" href="#contact">Réserver un appel découverte</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="eyebrow">Examen d’entrée ingénieur civil · Belgique · Session 2027</div>
+        <h1>Réussir Polytechnique, <em>semaine après semaine.</em></h1>
+        <p class="lead">Une préparation en ligne qui vous donne une méthode, une cadence et un professeur qui vous répond, de janvier jusqu’au jour de l’examen.</p>
+        <div class="ctas">
+          <a class="btn" href="#offre">Voir la préparation 2027</a>
+          <a class="btn ghost" href="#methode">Découvrir la méthode</a>
+        </div>
+      </div>
+      <div class="hero-figure" aria-hidden="true">__ICON__</div>
+    </div>
+    <div class="facts">
+      <div><b>16</b><span>semaines de préparation, de janvier à mai</span></div>
+      <div><b>2×2 h</b><span>de coaching en petit groupe chaque semaine</span></div>
+      <div><b>24 h</b><span>pour recevoir la réponse à vos questions</span></div>
+      <div><b>4 jours</b><span>de stage intensif en juin</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="probleme">
+  <div class="wrap">
+    <div class="read">
+      <div class="eyebrow">Le constat</div>
+      <h2>Vous avez les capacités. Ce qui manque le plus souvent, c’est une méthode.</h2>
+      <p>Un élève qui échoue à l’examen d’entrée n’échoue que rarement par manque de connaissances. Il échoue parce qu’il révise trop tard, ne s’entraîne pas en conditions réelles et oublie ce qu’il avait pourtant compris. Vous vous reconnaissez peut-être dans l’un de ces points.</p>
+    </div>
+    <div class="obstacles">
+      <div><strong>Vous révisez par à-coups</strong><p>Deux heures un soir, rien le lendemain. Sans planning, la matière s’accumule.</p></div>
+      <div><strong>Vous lisez les corrigés sans chercher</strong><p>On a l’impression de comprendre, mais le jour de l’examen, il faut trouver seul.</p></div>
+      <div><strong>Vous oubliez les formules</strong><p>Une formule vue en octobre et jamais revue a disparu en juin.</p></div>
+      <div><strong>Vous n’avez jamais composé chronomètre en main</strong><p>Sans examen blanc, impossible de savoir où vous en êtes vraiment.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="method" id="methode">
+  <div class="wrap">
+    <div class="read">
+      <div class="eyebrow">La méthode</div>
+      <h2>Un calendrier précis, qui monte en cadence jusqu’au jour J</h2>
+      <p>Chaque semaine a son objectif. Vous savez ce que vous travaillez, quand, et pourquoi. Le rythme s’intensifie à l’approche de l’examen.</p>
+    </div>
+    <div class="timeline" role="list">
+      <div class="step" role="listitem"><div class="m">Janvier</div><h3>Démarrage</h3><p>Planning personnel, premiers modules, installation d’Anki.</p></div>
+      <div class="step" role="listitem"><div class="m">Fév. – mars</div><h3>Les modules</h3><p>Théorie, exercices types, questions des années précédentes.</p></div>
+      <div class="step" role="listitem"><div class="m">Avril</div><h3>Consolidation</h3><p>Révision espacée de toutes les formules, reprise des points faibles.</p></div>
+      <div class="step" role="listitem"><div class="m">Mai</div><h3>Derniers modules</h3><p>Fin du programme d’une dizaine de modules.</p></div>
+      <div class="step key" role="listitem"><div class="m">Fin mai</div><h3>Examen blanc</h3><p>Conditions réelles, correction et rapport individuel.</p></div>
+      <div class="step key" role="listitem"><div class="m">Juin</div><h3>Stage intensif</h3><p>4 jours pour revoir et refaire l’ensemble des modules.</p></div>
+      <div class="step key" role="listitem"><div class="m">Juillet</div><h3>Jour J</h3><p>Vous arrivez préparé, avec un plan clair.</p></div>
+    </div>
+    <div class="week">
+      <div class="slot"><div class="d">Mardi</div><div class="h">18 h – 20 h</div><p>Séance en petit groupe : la théorie du module, expliquée pas à pas.</p></div>
+      <div class="slot"><div class="d">Jeudi</div><div class="h">18 h – 20 h</div><p>Séance d’exercices : vous cherchez d’abord, puis on corrige ensemble.</p></div>
+      <div class="slot"><div class="d">Dimanche</div><div class="h">19 h – 20 h</div><p>Questions-réponses : tout ce qui bloque avant la nouvelle semaine.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contenu">
+  <div class="wrap">
+    <div class="read">
+      <div class="eyebrow">Ce que vous recevez</div>
+      <h2>Tout ce qu’il faut pour travailler seul entre les séances</h2>
+    </div>
+    <div class="includes">
+      <div class="inc"><h3><span>01</span>Fiches résumées</h3><p>L’essentiel de chaque module, rédigé avec soin, pour réviser vite et bien.</p></div>
+      <div class="inc"><h3><span>02</span>Questions résolues</h3><p>Les questions des années précédentes, avec une solution détaillée étape par étape.</p></div>
+      <div class="inc"><h3><span>03</span>Decks Anki</h3><p>Toutes les formules de chaque module, prêtes à réviser en quelques minutes par jour.</p></div>
+      <div class="inc"><h3><span>04</span>Coaching collectif</h3><p>Deux séances de deux heures par semaine et une séance de questions le dimanche, en ligne.</p></div>
+      <div class="inc"><h3><span>05</span>Examen blanc corrigé</h3><p>Un rapport individuel sur vos forces, vos erreurs récurrentes et vos priorités.</p></div>
+      <div class="inc"><h3><span>06</span>Réponse sous 24 h</h3><p>Une question sur un exercice ? Vous recevez une réponse dans la journée.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="method" id="anki">
+  <div class="wrap anki">
+    <div class="read">
+      <div class="eyebrow">La mémorisation</div>
+      <h2>Les formules ne s’oublient plus</h2>
+      <p>Anki est une application de cartes de révision qui vous montre chaque formule juste avant que vous l’oubliiez. Quelques minutes par jour suffisent. Les decks sont déjà prêts pour chaque module : vous n’avez qu’à les ouvrir.</p>
+      <p>Le résultat : en juin, les formules vues en janvier sont encore là, sans relecture de dernière minute.</p>
+    </div>
+    <div class="cards" aria-label="Exemple de carte Anki">
+      <div class="card front"><div class="tag">Module trigonométrie · recto</div><div class="q">Formule d’addition pour cos(a + b) ?</div></div>
+      <div class="card back"><div class="tag">Verso</div><div class="formula">cos(a + b) = cos a · cos b − sin a · sin b</div><div class="next">Prochaine révision : <b>dans 6 jours</b></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="histoire">
+  <div class="wrap">
+    <div class="read">
+      <div class="eyebrow">Une préparation, racontée</div>
+      <h2>Lucas, 17 ans, bon en maths, et sans méthode</h2>
+      <p style="color:#D5D8E3">Lucas suit six heures de mathématiques par semaine et rêve d’intégrer Polytechnique. Il travaille, mais par à-coups, et ne sait pas vraiment où il en est.</p>
+    </div>
+    <div class="cols">
+      <div><h3>Janvier à mai</h3><p>Deux séances par semaine en petit groupe, ses questions le dimanche. Il apprend à chercher avant de lire la solution, et révise ses formules avec Anki.</p></div>
+      <div><h3>Fin mai et juin</h3><p>Un examen blanc dans les conditions réelles, puis un rapport qui lui indique ses priorités. Un stage de quatre jours pour tout consolider.</p></div>
+      <div><h3>Juillet</h3><p>Il entre dans la salle avec un plan clair. Et si l’examen ne passe pas du premier coup, il sait quoi retravailler pour septembre, et il n’est pas seul.</p></div>
+    </div>
+    <p class="note">Lucas est un personnage fictif, inspiré des élèves que j’accompagne.</p>
+  </div>
+</section>
+
+<section id="parents">
+  <div class="wrap parents">
+    <div class="read">
+      <div class="eyebrow">Pour les parents</div>
+      <h2>Vous savez ce que fait votre enfant, et quand</h2>
+      <p>Ce sont souvent les parents qui m’appellent avant l’inscription. Voici les réponses aux trois questions que l’on me pose le plus.</p>
+    </div>
+    <div class="qa">
+      <div><strong>La méthode est-elle sérieuse ?</strong><p>Le programme suit un planning semaine par semaine, avec un examen blanc corrigé et un rapport individuel. Rien n’est laissé au hasard.</p></div>
+      <div><strong>La charge de travail est-elle raisonnable ?</strong><p>Deux séances de deux heures en début de soirée, une heure le dimanche, et quelques minutes d’Anki par jour. Le rythme est soutenu, mais compatible avec la fin du secondaire. Les séances s’arrêtent pendant les congés scolaires.</p></div>
+      <div><strong>Et si l’examen ne réussit pas ?</strong><p>Votre enfant bénéficie d’une réduction de 50 % sur les modules de la session de septembre. Il ne repart pas de zéro.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="method" id="temoignages">
+  <div class="wrap">
+    <div class="read">
+      <div class="eyebrow">Ils l’ont fait</div>
+      <h2>Ce qu’en disent les anciens élèves</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote"><p><span class="todo">[Témoignage réel d’un ancien élève, avec son accord écrit]</span></p><span><span class="todo">[Prénom], admis en [année]</span></span></div>
+      <div class="quote"><p><span class="todo">[Témoignage réel d’un ancien élève, avec son accord écrit]</span></p><span><span class="todo">[Prénom], admis en [année]</span></span></div>
+      <div class="quote"><p><span class="todo">[Témoignage d’un parent, avec son accord écrit]</span></p><span><span class="todo">[Prénom], parent d’élève</span></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="coach">
+  <div class="wrap coach">
+    <div class="portrait"><span class="todo">[Votre photo]</span></div>
+    <div class="read">
+      <div class="eyebrow">Votre coach</div>
+      <h2>Plus de 25 ans à faire progresser des élèves en maths et en sciences</h2>
+      <p>Je suis <span class="todo">[prénom]</span>, professeur de mathématiques. J’accompagne depuis plus de vingt-cinq ans des élèves en difficulté en mathématiques et en sciences, et je me consacre aujourd’hui à la préparation des examens d’entrée en Polytechnique et en médecine. Mon rôle : vous donner un cadre, une méthode, et répondre à vos questions.</p>
+      <div class="stat">
+        <div><b>25+</b><span>années d’accompagnement</span></div>
+        <div><b><span class="todo">[XX] %</span></b><span><span class="todo">de réussite parmi les élèves ayant suivi tout le programme, [20XX]–[20YY], sur [N] élèves</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offer" id="offre">
+  <div class="wrap">
+    <div class="read">
+      <div class="eyebrow">La préparation 2027</div>
+      <h2>Une seule formule, tout compris</h2>
+    </div>
+    <div class="price-box">
+      <div class="left">
+        <h3>Préparation complète à l’examen d’entrée en Polytechnique</h3>
+        <ul>
+          <li>16 semaines de coaching collectif en ligne, de janvier à mai</li>
+          <li>Fiches résumées et questions résolues des années précédentes</li>
+          <li>Decks Anki de toutes les formules, module par module</li>
+          <li>Questions-réponses chaque dimanche et réponse écrite sous 24 h</li>
+          <li>Examen blanc corrigé avec rapport individuel</li>
+          <li>Stage intensif de 4 jours en juin</li>
+        </ul>
+      </div>
+      <div class="right">
+        <div class="amount">1 200 €<small><span class="todo">TVA comprise / hors TVA : à préciser</span></small></div>
+        <a class="btn" href="#contact">Je réserve ma place</a>
+        <a class="btn ghost small" href="#contact">Poser une question d’abord</a>
+      </div>
+    </div>
+    <div class="guarantee">
+      <strong>Session de septembre.</strong> Si vous avez suivi la préparation complète et échoué à une ou plusieurs épreuves, les modules de rattrapage (20 € de l’heure) vous sont proposés avec 50 % de réduction, soit par exemple 120 € pour un module de 12 heures. <span class="todo">[Conditions : inscription avant le …, justificatif de résultat]</span>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap read">
+    <div class="eyebrow">Questions fréquentes</div>
+    <h2>Avant de vous inscrire</h2>
+    <div style="margin-top:22px">
+      <details><summary>Quel niveau faut-il pour suivre la préparation ?</summary><p>Celui d’un élève qui suit au moins six heures de mathématiques par semaine en secondaire.</p></details>
+      <details><summary>Quand faut-il commencer ?</summary><p>La préparation démarre en janvier. Commencer après une période de vacances permet de partir sur un rythme régulier dès la première semaine.</p></details>
+      <details><summary>Comment se déroulent les séances ?</summary><p>Entièrement en ligne, sur Google Meet ou Zoom. Une tablette est la bienvenue pour partager vos brouillons, mais elle n’est pas obligatoire.</p></details>
+      <details><summary>Qu’est-ce qu’Anki, et dois-je le payer ?</summary><p>Anki est une application de révision par cartes. Elle est gratuite sur ordinateur et sur Android. Les decks sont fournis, prêts à l’emploi.</p></details>
+      <details><summary>Où se trouvent les contenus ?</summary><p>Fiches, questions résolues et decks sont disponibles sur la plateforme de formation, accessible dès l’inscription.</p></details>
+      <details><summary>Préparez-vous aussi à l’examen de médecine ?</summary><p>Oui, une préparation dédiée à l’examen d’entrée en médecine et dentisterie est également proposée. Contactez-moi pour les détails.</p></details>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="med">
+      __MED__
+      <div><h3>Vous visez plutôt médecine ?</h3><p style="margin:6px 0 0;color:var(--encre-douce)">La même méthode s’applique à l’examen d’entrée en médecine et dentisterie : planning, coaching en petit groupe et mémorisation active.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap read">
+    <div class="eyebrow" style="color:var(--turquoise)">Parlons-en</div>
+    <h2>Réservez un appel découverte de 15 minutes</h2>
+    <p style="color:#D5D8E3">Élève ou parent, posez vos questions avant de vous engager. Nous faisons le point sur le niveau, le calendrier et les objectifs.</p>
+    <div class="row">
+      <div><span>E-mail</span><span class="todo">[adresse professionnelle]</span></div>
+      <div><span>Téléphone</span><span class="todo">[numéro]</span></div>
+      <div><span>Format</span>100 % en ligne · Belgique</div>
+    </div>
+    <a class="btn" href="#contact">Réserver mon appel <span class="todo" style="background:transparent;border:0;color:inherit">[lien Systeme.io]</span></a>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Cap Prépa · Préparation aux examens d’entrée en Polytechnique et en médecine · Aucun résultat n’est garanti : la réussite dépend du travail de chaque élève.</div></footer>
+</body>
+</html>
