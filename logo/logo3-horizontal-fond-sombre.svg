@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 200" width="700" height="200">
-  <rect width="700" height="200" fill="#1C2541"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200" width="760" height="200">
+  <rect width="760" height="200" fill="#1C2541"/>
   <circle cx="100" cy="100" r="80" fill="#26315A"/>
   <path d="M128 52 C 112 40, 100 52, 100 72 L 100 128 C 100 148, 88 160, 72 148" stroke="#3AAFA9" stroke-width="12" stroke-linecap="round" fill="none"/>
   <circle cx="132" cy="54" r="10" fill="#E0A526"/>
   <text x="58" y="146" font-family="Georgia, 'Playfair Display', serif" font-style="italic" font-size="22" fill="#F7F7F2" opacity="0.85">a</text>
-  <text x="138" y="88" font-family="Georgia, 'Playfair Display', serif" font-style="italic" font-size="22" fill="#F7F7F2" opacity="0.85">X</text>
-  <text x="210" y="92" font-family="Georgia, 'Playfair Display', serif" font-size="54" font-weight="700" fill="#F7F7F2" letter-spacing="1">Cap sur l’X</text>
+  <text x="138" y="88" font-family="Georgia, 'Playfair Display', serif" font-style="italic" font-size="22" fill="#F7F7F2" opacity="0.85">b</text>
+  <text x="210" y="92" font-family="Georgia, 'Playfair Display', serif" font-size="54" font-weight="700" fill="#F7F7F2" letter-spacing="1">Cap Polytech</text>
   <rect x="210" y="110" width="44" height="4" rx="2" fill="#3AAFA9"/>
-  <text x="266" y="116" font-family="'Montserrat', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#3AAFA9" letter-spacing="2.5">PRÉPARATION AU CONCOURS</text>
+  <text x="266" y="116" font-family="'Montserrat', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#3AAFA9" letter-spacing="2.5">EXAMEN D’ENTRÉE INGÉNIEUR CIVIL</text>
   <text x="210" y="146" font-family="'Montserrat', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="500" fill="#F7F7F2" opacity="0.75" letter-spacing="2.5">COURS · MÉTHODE · ENTRAÎNEMENT</text>
 </svg>

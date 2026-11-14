@@ -3,5 +3,5 @@
   <path d="M128 52 C 112 40, 100 52, 100 72 L 100 128 C 100 148, 88 160, 72 148" stroke="#3AAFA9" stroke-width="12" stroke-linecap="round" fill="none"/>
   <circle cx="132" cy="54" r="10" fill="#E0A526"/>
   <text x="58" y="146" font-family="Georgia, 'Playfair Display', serif" font-style="italic" font-size="22" fill="#F7F7F2" opacity="0.85">a</text>
-  <text x="138" y="88" font-family="Georgia, 'Playfair Display', serif" font-style="italic" font-size="22" fill="#F7F7F2" opacity="0.85">X</text>
+  <text x="138" y="88" font-family="Georgia, 'Playfair Display', serif" font-style="italic" font-size="22" fill="#F7F7F2" opacity="0.85">b</text>
 </svg>
