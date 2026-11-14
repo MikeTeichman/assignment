@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200" width="760" height="200">
+<rect width="760" height="200" fill="#1C2541"/>
+  <circle cx="100" cy="100" r="80" fill="#F7F7F2" stroke="#1C2541" stroke-width="6"/>
+  <g transform="translate(91 98) scale(2.2)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-11 -18 L-11 -6 C-11 6, 11 6, 11 -6 L11 -18" stroke="#3AAFA9" stroke-width="4"/>
+    <path d="M-11 -18 L-8 -21 M11 -18 L8 -21" stroke="#3AAFA9" stroke-width="4"/>
+    <path d="M0 3 L0 10 C0 22, 18 22, 18 12 L18 9" stroke="#3AAFA9" stroke-width="4"/>
+    <circle cx="18" cy="3" r="7" fill="#E0A526" stroke="#F7F7F2" stroke-width="2"/>
+    <circle cx="18" cy="3" r="2.6" fill="#F7F7F2" stroke="none"/>
+  </g>
+  <text x="210" y="92" font-family="Georgia, 'Playfair Display', serif" font-size="54" font-weight="700" fill="#F7F7F2" letter-spacing="1">Cap Prépa</text>
+  <rect x="210" y="110" width="44" height="4" rx="2" fill="#3AAFA9"/>
+  <text x="266" y="116" font-family="'Montserrat', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" fill="#3AAFA9" letter-spacing="2.5">MÉDECINE</text>
+  <text x="210" y="146" font-family="'Montserrat', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="500" fill="#F7F7F2" opacity="0.75" letter-spacing="2.5">EXAMEN D’ENTRÉE MÉDECINE · DENTISTERIE</text>
+</svg>
